@@ -30,5 +30,8 @@ replay_pid*
 # Ignore Gradle build output directory
 build
 
+# Ignore default build target for kotlinc
+META-INF
+
 # Ignore IDE config directories
 .idea
