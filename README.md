@@ -13,10 +13,10 @@ The coding interview test suite is used in two ways:
 
 To use it as a command line application, either take advantage of the gradle `application` plugin and do:
 ```shell
-gradle :forestry:run --args="arg1 arg2"
+gradle :forestry:run --args="arg1 arg2" -Pmain="{kotlin|java}"
 ```
 
-Or interact with the command line app directly using `kotlinc` and `kotlin`.
+Or interact with the (Kotlin) command line app directly using `kotlinc` and `kotlin`.
 Note that this approach takes more configuration when the command line app pulls in additional packages.
 Using the gradle plugin is easier.
 

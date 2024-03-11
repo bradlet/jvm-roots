@@ -9,5 +9,10 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("jvm.roots.forestry.AppKt")
+    val mainClassName = when (properties["main"]) {
+        "kotlin" -> "AppKt"
+        "java" -> "JavaApp"
+        else -> "AppKt"
+    }
+    mainClass.set("jvm.roots.forestry.$mainClassName")
 }
