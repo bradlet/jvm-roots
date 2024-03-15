@@ -1,5 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
+import tests.JvmRootsTestListener
+
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm")
@@ -16,6 +18,14 @@ repositories {
 //        implementation("org.apache.commons:commons-text:1.10.0")
 //    }
 //}
+
+tasks.test {
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+    }
+    addTestListener(JvmRootsTestListener())
+}
 
 testing {
     suites {
