@@ -6,7 +6,7 @@ import org.gradle.api.tasks.testing.TestResult
 
 class JvmRootsTestListener: TestListener {
     override fun beforeSuite(suite: TestDescriptor?) {
-        println("Running test suite: ${suite?.displayName}")
+        println("Running test suite: ${suite?.displayName} : ${suite?.isComposite}")
     }
 
     override fun afterSuite(suite: TestDescriptor?, result: TestResult?) {
@@ -17,7 +17,7 @@ class JvmRootsTestListener: TestListener {
     }
 
     override fun beforeTest(testDescriptor: TestDescriptor?) {
-        print("Running test ${testDescriptor?.displayName}...")
+        print("Running test ${testDescriptor?.className}.${testDescriptor?.name}...")
     }
 
     override fun afterTest(testDescriptor: TestDescriptor?, result: TestResult?) {
