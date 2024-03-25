@@ -5,10 +5,19 @@ import jvm.roots.branches.LinkedList;
 import java.util.Objects;
 
 public class JavaApp {
+
+    private static void doSomethingForExample(final ExampleInterface e) {
+        System.out.println("Running an example...");
+        e.example();
+    }
+
+
     public static void main(String[] args) {
         // Make a dummy app that subtracts elements in second list from the first provided
         if (args.length != 2) {
-            System.out.println("Usage: gradle :forestry:run -Pmain=java --args='1234 23'");
+            doSomethingForExample(
+                    () -> System.out.println("Usage: gradle :forestry:run -Pmain=java --args='1234 23'")
+            );
             return;
         }
         LinkedList<Integer> linkedList = new LinkedList<>();
