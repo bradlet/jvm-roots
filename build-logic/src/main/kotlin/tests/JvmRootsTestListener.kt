@@ -6,13 +6,16 @@ import org.gradle.api.tasks.testing.TestResult
 
 class JvmRootsTestListener: TestListener {
     override fun beforeSuite(suite: TestDescriptor?) {
-        println("Running test suite: ${suite?.displayName} : ${suite?.isComposite}")
+        if (suite?.parent === null) {
+            println(suite?.displayName)
+        }
     }
 
     override fun afterSuite(suite: TestDescriptor?, result: TestResult?) {
-        println("Completed test suite: ${suite?.displayName}")
-        result?.let { tests ->
-            println("Succeeded ${tests.successfulTestCount} / ${tests.testCount} (Skipped ${tests.skippedTestCount})")
+        if (suite?.parent === null) {
+            result?.let { tests ->
+                println("Succeeded ${tests.successfulTestCount} | Failed  ${tests.failedTestCount} | Skipped ${tests.skippedTestCount}")
+            }
         }
     }
 
