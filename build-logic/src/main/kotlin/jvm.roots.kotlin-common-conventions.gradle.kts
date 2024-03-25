@@ -12,15 +12,17 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
 testing {
     suites {
-        // Configure the built-in test suite
         val test by getting(JvmTestSuite::class) {
-            // Use JUnit Jupiter test framework
-            useJUnitJupiter("5.10.0")
-
             targets.all{
                 testTask.configure {
+                    useJUnitPlatform()
                     outputs.upToDateWhen { false }
                     addTestListener(JvmRootsTestListener())
 
