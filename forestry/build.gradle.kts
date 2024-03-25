@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     implementation(project(":branches"))
+    implementation(libs.gson)
 }
 
 application {

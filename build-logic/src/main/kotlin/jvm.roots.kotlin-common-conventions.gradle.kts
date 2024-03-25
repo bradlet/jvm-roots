@@ -12,13 +12,6 @@ repositories {
     mavenCentral()
 }
 
-//dependencies {
-//    constraints {
-//        // Define dependency versions as constraints
-//        implementation("org.apache.commons:commons-text:1.10.0")
-//    }
-//}
-
 testing {
     suites {
         // Configure the built-in test suite
