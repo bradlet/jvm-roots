@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 # Compiled class file
 *.class
+**/bin/
 
 # Log file
 *.log
@@ -35,3 +35,4 @@ META-INF
 
 # Ignore IDE config directories
 .idea
+.vscode/
