@@ -14,4 +14,4 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - name: Check github-action expressions
-              run: echo "${{ join(env, '-') }}"
+              run: echo "${{ join(env, '-') }}" # This doesn't seem to work
