@@ -1,16 +1,16 @@
 name: on_push
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    env:
-      TEST1: "test"
-    steps:
-      - uses: actions/checkout@v4
-      - name: Check github-action expressions
-        run: echo ${{ join(env, '-') }}
+    test:
+        runs-on: ubuntu-latest
+        env:
+            TEST1: "test"
+        steps:
+            - uses: actions/checkout@v4
+            - name: Check github-action expressions
+              run: echo "${{ join(env, '-') }}"
