@@ -8,10 +8,9 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
-        env:
-            TEST1: "test"
-            TEST2: "test"
         steps:
             - uses: actions/checkout@v4
             - name: Check github-action expressions
-              run: echo "${{ join(env, '-') }}" # This doesn't seem to work
+              run: echo "${{ join('["test", "test2"]', '-') }}"
+            - name: Another expression test
+              run: echo "${{ github.workspace }}"
