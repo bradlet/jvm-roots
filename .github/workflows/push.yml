@@ -13,4 +13,4 @@ jobs:
             - name: Check github-action expressions
               run: echo "${{ join('["test", "test2"]', '-') }}"
             - name: Another expression test
-              run: echo "${{ github.workspace }}"
+              run: ls "${{ github.workspace }}"
